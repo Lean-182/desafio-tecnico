@@ -1,0 +1,34 @@
+Para organizar los esfuerzos en la prueba técnica Front End de Chatter, podríamos seguir el siguiente plan de trabajo:
+
+1. Comprender la estructura del proyecto.
+2. Descargar y descomprimir la API proporcionada.
+3. Leer el archivo `README.md` de la API para entender cómo se realizan las solicitudes y qué datos se esperan como respuesta.
+4. Utilizar el comando `npm start` para correr la API en el puerto local 8080.
+5. Utilizar el comando `npm run dev` para correr el cliente y verificar que se está conectando correctamente a la API.
+6. Completar todas las secciones que estén marcadas como `TODO` en el código del cliente, incluyendo el inicio de sesión, registrarse, enviar mensaje, obtener los mensajes, etc.
+7. Implementar el manejo de sockets marcados como `TODO` utilizando la librería Socket.io. Leer la documentación proporcionada en el archivo `README.md` de la API para entender cómo se utilizan los sockets en esta aplicación.
+8. Persistir el JWT en la sesión de manera que al recargar la página no se pierda el usuario loggeado. Es importante asegurarse de que el token de autenticación se está enviando con cada solicitud.
+9. Agregar la funcionalidad de ver el ticket abierto y cerrado asociado a un chat. Para ello, se deberá crear un componente que pueda mostrar los detalles de los tickets de manera adecuada y un menú contextual que permita acceder a esta funcionalidad. Es importante recordar que no es necesario conectar el componente con la API en este momento, ya que los datos pueden ser mockeados.
+10. Asegurarse de que el código esté limpio y organizado en directorios y archivos lógicos. Si se considera necesario, crear hooks personalizados para mantener el código desacoplado y fácil de mantener.
+
+Espero que este plan de trabajo te sea útil para organizar tus esfuerzos en la prueba técnica. ¡Buena suerte!
+
+Sure, to delete a chat from the chats slice in your Redux store, you can dispatch the deleteChat action from your chatsSlice:
+
+Import the useDispatch hook from react-redux:
+📋 Copy code
+import { useDispatch } from 'react-redux';
+Import the deleteChat action from your chatsSlice:
+📋 Copy code
+import { deleteChat } from './chatsSlice';
+Create a dispatch variable using the useDispatch hook:
+📋 Copy code
+const dispatch = useDispatch();
+Define the eraseChat function to dispatch the deleteChat action with the chat ID:
+📋 Copy code
+const eraseChat = () => {
+  dispatch(deleteChat(chatId));
+};
+This will remove the chat with the corresponding chatId from the chats slice in your Redux store.
+
+Note: You may need to make sure that the chatId prop passed to the ChatTab component matches the id property of the chat object in the chats array in your Redux store.
